@@ -22,4 +22,22 @@ class Main {
       
         return ((third_last*100 + second_last*10 + last) % 8 == 0) ? 1 : 0;
     }
+	
+    // Another way
+    public int solve(String A) {
+        int n = A.length();
+      
+        if (n == 0)
+            return 0;
+      
+        int ei = (n>2) ? n-3 : 0;
+        long res = 0;
+        long ans = 1;
+        for(int i=n-1; i>=ei; i--) {
+            res = res + (((A.charAt(i)-'0' % 8) * ans % 8) % 8);
+            res = res % 8;
+            ans = (ans*10) % 8;
+        }
+        return (res % 8 == 0) ? 1 : 0;
+    }
 }

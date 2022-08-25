@@ -1,11 +1,11 @@
 import java.util.*;
 class Main {
-    public static void main(String args[]) {
+    public void main(String args[]) {
         int a = isModBy8("4758310052942341036336679074241759053154797537802772");
         System.out.println(a);
     }
     
-    public static int isModBy8(String A) {
+    public int isModBy8(String A) {
         int n = A.length();
 	    
         if (n == 1)
